@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        .form {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: 50px auto;
+            border-radius: 10px;
+        }
+
+        input, select, button {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form">
+        <h2>Event Registration</h2>
+
+        <form id="myForm">
+            <input type="text" id="name" placeholder="Enter Name" required>
+
+            <input type="email" id="email" placeholder="Enter Email" required>
+
+            <input type="text" id="phone" placeholder="Enter Phone Number" required>
+
+            <select id="event" required>
+                <option value="">Select Event</option>
+                <option>Workshop</option>
+                <option>Seminar</option>
+                <option>Tech Fest</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p id="msg"></p>
+    </div>
+
+    <script>
+        document.getElementById("myForm").onsubmit = function(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+
+            document.getElementById("msg").innerHTML =
+                "Registration Successful! Thank You " + name;
+
+            this.reset();
+        };
+    </script>
+
+</body>
+</html>
+
